@@ -82,7 +82,7 @@ public class Conexiune {
     public ArrayList<Materii> getMateriiUser() {
         ArrayList<Materii> result = new ArrayList<Materii>();
         String statement = new String("SELECT m.id_materie, m.denumire_materie, m.prescurtare, m.zi, m.ora_inceput, m.durata, m.numar_credite, m.nume_profesor, m.denumire_activitate, um.nota FROM vMaterii m JOIN users_materii um JOIN users u ON um.id_materie = m.id_materie AND u.id_user = um.id_user WHERE u.id_user = " + curent.getIdUser() + ";");
-        System.out.println(statement);
+        //System.out.println(statement);
         try{
             rs = selectStatement.executeQuery(statement);
             while(rs.next()) {
@@ -100,7 +100,7 @@ public class Conexiune {
                 result.add(materie);
             }
         } catch (SQLException throwables) {
-            System.out.println(statement);
+            //System.out.println(statement);
             System.out.println("de aici este: " + throwables.getMessage());
             //throwables.printStackTrace();
         }
@@ -110,7 +110,7 @@ public class Conexiune {
     @NotNull
     public void assignStudentLaMaterie(Materii materie) {
         try {
-            System.out.println("call asignareUserMaterie(" + curent.getIdUser() + ", " + materie.getIdMaterie() + ");");
+            //System.out.println("call asignareUserMaterie(" + curent.getIdUser() + ", " + materie.getIdMaterie() + ");");
             selectStatement.executeQuery("call asignareUserMaterie(" + curent.getIdUser() + ", " + materie.getIdMaterie() + ");");
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());

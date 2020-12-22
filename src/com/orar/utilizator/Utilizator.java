@@ -210,6 +210,7 @@ public class Utilizator implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cerc_p.fillProperty().setValue(Paint.valueOf("#FF508C"));
         mesajSucces_am.setText("");
         mesaj_rm.setText("");
         adaugareMateriiCurente();
@@ -366,7 +367,7 @@ public class Utilizator implements Initializable {
 
     public void counterPomodoro5P() {
         textPomodoroTime.fillProperty().setValue(Paint.valueOf("#55ED3B"));
-        ceasThread(1);
+        ceasThread(5);
     }
 
     public void counterPomodoro10P() {
@@ -385,9 +386,9 @@ public class Utilizator implements Initializable {
         Timp timp = new Timp();
         Counter counter = new Counter(timp, nMin);
 
-        timeStamp = counter.getTimeStampDifference() - 55;
+        timeStamp = counter.getTimeStampDifference();
 
-        while (timeStamp > 0) {
+        while (timeStamp >= 0) {
             nrMin = Counter.getMinutes(timeStamp);
             nrSec = Counter.getSeconds(timeStamp);
             displayText = String.valueOf(nrMin / 10) + String.valueOf(nrMin % 10) + ":" + String.valueOf(nrSec / 10) + String.valueOf(nrSec % 10);
