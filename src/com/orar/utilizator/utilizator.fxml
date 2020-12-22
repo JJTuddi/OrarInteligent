@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orar.utilizator.Utilizator">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #c0c1b3;">
+         <children>
+            <Pane layoutX="530.0" layoutY="626.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <Text fx:id="cerc_mc" layoutX="35.0" layoutY="20.0" onMouseClicked="#butonMaterii" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="cerc_o" layoutX="65.0" layoutY="20.0" onMouseClicked="#butonOrar" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="cerc_am" layoutX="95.0" layoutY="20.0" onMouseClicked="#butonAdaugareMaterii" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="cerc_rm" layoutX="125.0" layoutY="20.0" onMouseClicked="#butonRenuntareMaterie" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="cerc_p" layoutX="155.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </Pane>
+            <Button layoutX="57.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#butonMaterii" prefHeight="38.0" prefWidth="160.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Materii curente" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="647.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#butonRenuntareMaterie" prefHeight="38.0" prefWidth="199.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Renuntare Materie" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="244.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#butonOrar" prefHeight="38.0" prefWidth="160.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Orar azi" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="429.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#butonAdaugareMaterii" prefHeight="38.0" prefWidth="193.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Adaugare Materie" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="870.0" layoutY="661.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="175.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Pomodoro" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="1077.0" layoutY="661.0" mnemonicParsing="false" onAction="#delogare" prefHeight="38.0" prefWidth="175.0" style="-fx-background-radius: 30; -fx-background-color: #fa5427;" text="Delogare" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane fx:id="paneOrar" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <Text fill="#3f9785" layoutX="541.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orar azi" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#3f9785" height="31.0" layoutX="125.0" layoutY="97.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o8" fill="WHITE" height="31.0" layoutX="125.0" layoutY="128.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o9" fill="WHITE" height="31.0" layoutX="125.0" layoutY="159.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o10" fill="WHITE" height="31.0" layoutX="125.0" layoutY="189.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o11" fill="WHITE" height="31.0" layoutX="125.0" layoutY="220.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o12" fill="WHITE" height="31.0" layoutX="125.0" layoutY="251.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o13" fill="WHITE" height="31.0" layoutX="125.0" layoutY="282.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o14" fill="WHITE" height="31.0" layoutX="125.0" layoutY="313.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o15" fill="WHITE" height="31.0" layoutX="125.0" layoutY="344.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o16" fill="WHITE" height="31.0" layoutX="125.0" layoutY="375.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o17" fill="WHITE" height="31.0" layoutX="125.0" layoutY="406.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o18" fill="WHITE" height="31.0" layoutX="125.0" layoutY="437.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o19" fill="WHITE" height="31.0" layoutX="125.0" layoutY="468.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o20" fill="WHITE" height="31.0" layoutX="125.0" layoutY="499.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o21" fill="WHITE" height="31.0" layoutX="125.0" layoutY="528.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Rectangle fx:id="o22" fill="WHITE" height="31.0" layoutX="125.0" layoutY="557.0" stroke="TRANSPARENT" strokeType="INSIDE" width="350.0" />
+                  <Text fx:id="oTextZiua" fill="WHITE" layoutX="165.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ziua" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oText1" fill="#3f9785" layoutX="563.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Acum ai ora de ....">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oText2" fill="#3f9785" layoutX="563.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Predata de ...">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oText3" fill="#3f9785" layoutX="563.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recomand sa fii atent deoarece are x credite">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra8" layoutX="165.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="08:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra9" layoutX="165.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="09:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra10" layoutX="165.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra11" layoutX="165.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra12" layoutX="165.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra13" layoutX="165.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra14" layoutX="165.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra15" layoutX="165.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra16" layoutX="165.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra17" layoutX="165.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra18" layoutX="165.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra19" layoutX="165.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra20" layoutX="165.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra21" layoutX="165.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oTextOra22" layoutX="165.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22:00" textAlignment="CENTER" wrappingWidth="269.982421875">
+                     <font>
+                        <Font name="Atomic Age" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="paneMateriiCurente" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <Text fill="#3f9785" layoutX="457.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materii Curente" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#3f9785" layoutX="92.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materie">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="choiceBox_mc" layoutX="190.0" layoutY="137.0" prefHeight="25.0" prefWidth="484.0" style="-fx-background-color: #c0c1b3; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #3f9785;" />
+                  <Text fx:id="mcDenumire" fill="#3f9785" layoutX="340.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Denumire Materie">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mcTimp" fill="#3f9785" layoutX="340.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are loc luni, de la ora, si dureaza ...">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mcTipMaterieSiCuCine" fill="#3f9785" layoutX="340.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Este laborator si il faci cu ....">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mcNrCredite" fill="#3f9785" layoutX="340.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valoreaza x credite">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mcAiNota" fill="#3f9785" layoutX="340.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ai nota...">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#3f9785" layoutX="92.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nota">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="fieldNota_mc" layoutX="161.0" layoutY="423.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="368.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#butonSetareNota_mc" prefHeight="36.0" prefWidth="111.0" style="-fx-background-color: #e2cda7; -fx-border-color: #000000; -fx-background-radius: 30; -fx-border-radius: 30;" text="Setare nota">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Pane layoutX="84.0" layoutY="95.0" onMouseEntered="#actualizareDetaliiMaterieCurenta" prefHeight="38.0" prefWidth="648.0" />
+                  <Pane layoutX="92.0" layoutY="170.0" onMouseEntered="#actualizareDetaliiMaterieCurenta" prefHeight="230.0" prefWidth="648.0" />
+                  <Pane layoutX="31.0" layoutY="132.0" onMouseEntered="#actualizareDetaliiMaterieCurenta" prefHeight="38.0" prefWidth="153.0" />
+                  <Pane layoutX="690.0" layoutY="131.0" onMouseEntered="#actualizareDetaliiMaterieCurenta" prefHeight="38.0" prefWidth="357.0" />
+                  <Text fx:id="succesNota_mc" fill="#0db213" layoutX="161.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nota a fost setata">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="eroareNota_mc" fill="#e40000" layoutX="161.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eroare la setarea notei, asigura-te ca ai introdus un numar intreg intre 0 si 10 inclusiv">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="paneRenuntareMaterie" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+               <children>
+                  <ImageView fitHeight="497.0" fitWidth="372.0" layoutX="875.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/tower.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane opacity="0.61" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+                     <children>
+                        <Text fx:id="mesaj_rm" fill="#dd0000" layoutX="228.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children></Pane>
+                  <Text fill="#3f9785" layoutX="92.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materie">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="choiceBox_rm" layoutX="190.0" layoutY="137.0" prefHeight="25.0" prefWidth="484.0" style="-fx-background-color: #c0c1b3; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #3f9785;" />
+                  <Button layoutX="321.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#butonRenuntare" prefHeight="36.0" prefWidth="111.0" style="-fx-background-color: #e2cda7; -fx-border-color: #000000; -fx-background-radius: 30; -fx-border-radius: 30;" text="RENUNTA">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#3f9785" layoutX="405.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renuntare la materii" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="1075.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#resetareOrar" prefHeight="36.0" prefWidth="153.0" style="-fx-background-color: #fa5427; -fx-border-color: #000000; -fx-background-radius: 30; -fx-border-radius: 30;" text="Resetare orar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <Text fill="#3f9785" layoutX="457.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materii Curente" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="paneAdaugareMaterie" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <ChoiceBox fx:id="choiceBox_am" layoutX="190.0" layoutY="137.0" prefHeight="25.0" prefWidth="484.0" style="-fx-background-color: #c0c1b3; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #3f9785;" />
+                  <Text fill="#3f9785" layoutX="92.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materie">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#3f9785" layoutX="429.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adaugare Materie" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="297.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#btAdaugareMatInOrar" prefHeight="36.0" prefWidth="215.0" style="-fx-background-color: #e2cda7; -fx-border-color: #000000; -fx-background-radius: 30; -fx-border-radius: 30;" text="Adaugare materie in Orar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Text fx:id="mesajEroare_am" fill="#c90404" layoutX="293.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Te rog sa alegi o materie!">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mesajSucces_am" fill="#0ec704" layoutX="134.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Te rog sa alegi o materie!">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

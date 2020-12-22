@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sqllib">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/../../../Documents/Java Jars/mysql-8.0.21-winx64/lib" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="453.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orar.autentificare.Autentificare">
+   <children>
+      <Pane prefHeight="453.0" prefWidth="1090.0" style="-fx-background-color: #e9deef;">
+         <children>
+            <ImageView fitHeight="422.0" fitWidth="740.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/intro.jpg" />
+               </image>
+            </ImageView>
+            <Pane fx:id="paneInregistrare" layoutX="660.0" layoutY="14.0" prefHeight="422.0" prefWidth="428.0" style="-fx-background-color: #e9deef;">
+               <children>
+                  <Text fill="#4f5e62" layoutX="88.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inregistrare">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="inregistrareButon_i" layoutX="222.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#InregInregistrare" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #ACBEA9; -fx-background-radius: 30;" text="Inregistrare">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="inregistrareButon_a" layoutX="40.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#InregAutentificare" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #EE6B6C; -fx-background-radius: 30;" text="Autentificare">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fx:id="inregistrareMesajEroare" fill="#dd0000" layoutX="100.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Username-ul este deja luat">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e5d614c" height="7.0" layoutX="44.0" layoutY="75.0" stroke="TRANSPARENT" strokeType="INSIDE" width="340.0" />
+                  <Text layoutX="40.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nume">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenume">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="inregistrareNume" layoutX="150.0" layoutY="120.0" prefHeight="25.0" prefWidth="240.0" promptText="nume...">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="inregistrarePrenume" layoutX="150.0" layoutY="150.0" prefHeight="25.0" prefWidth="240.0" promptText="prenume....">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="inregistrareMail" layoutX="150.0" layoutY="180.0" prefHeight="25.0" prefWidth="240.0" promptText="e-mail...">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="inregistrareUsername" layoutX="150.0" layoutY="210.0" prefHeight="25.0" prefWidth="240.0" promptText="username...">
+                     <font>
+                        <Font name="Microsoft JhengHei Light" size="13.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="inregistrareParola" layoutX="150.0" layoutY="240.0" prefHeight="28.0" prefWidth="240.0" promptText="parola...">
+                     <font>
+                        <Font name="Microsoft JhengHei" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <Text fx:id="inregistrareMesajSucces" fill="#06db00" layoutX="100.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Username-ul este deja luat">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="paneAutentificare" layoutX="660.0" layoutY="14.0" prefHeight="422.0" prefWidth="428.0" style="-fx-background-color: #e9deef;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4e5d614c" height="7.0" layoutX="44.0" layoutY="78.0" stroke="TRANSPARENT" strokeType="INSIDE" width="340.0" />
+                  <Text fill="#4f5e62" layoutX="73.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autentificare">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="autentificareUsername" layoutX="101.0" layoutY="164.0" prefHeight="32.0" prefWidth="260.0" />
+                  <PasswordField fx:id="autentificareParola" layoutX="101.0" layoutY="222.0" prefHeight="32.0" prefWidth="260.0" />
+                  <ImageView fitHeight="41.0" fitWidth="40.0" layoutX="44.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/user.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="41.0" fitWidth="40.0" layoutX="44.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/password.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="autentificareButon_a" layoutX="222.0" layoutY="290.0" mnemonicParsing="false" onAction="#AutentifAutentificare" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #ACBEA9; -fx-background-radius: 30;" text="Autentificare">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="autentificareButon_i" layoutX="40.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#AutentifInregistrare" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #EE6B6C; -fx-background-radius: 30;" text="Inscriere">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fx:id="autentificareMesajEroare" fill="#dd0000" layoutX="100.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Username sau parola gresit/a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
