@@ -2,6 +2,7 @@ package com.orar.utilizator;
 
 import com.orar.conexiuneBD.Conexiune;
 import com.orar.conexiuneBD.Materii;
+import com.orar.timp.Counter;
 import com.orar.timp.Timp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -26,7 +27,7 @@ public class Utilizator implements Initializable {
     public Text oTextZiua, oText1, oText2, oText3;
     public Rectangle o8, o9, o10, o11, o12, o13, o14, o15, o16, o17, o18, o19, o20, o21, o22;
     public Text oTextOra8, oTextOra9, oTextOra10, oTextOra11, oTextOra12, oTextOra13, oTextOra14, oTextOra15, oTextOra16, oTextOra17, oTextOra18, oTextOra19, oTextOra20, oTextOra21, oTextOra22;
-    public Pane paneOrar, paneMateriiCurente, paneAdaugareMaterie, paneRenuntareMaterie;
+    public Pane paneOrar, paneMateriiCurente, paneAdaugareMaterie, paneRenuntareMaterie, panePomodoro;
     public Text cerc_mc, cerc_o, cerc_rm, cerc_am, cerc_p;
     public ChoiceBox<Materii> choiceBox_mc, choiceBox_am, choiceBox_rm;
     public Text mesajSucces_am, mcDenumire, mcTimp, mcTipMaterieSiCuCine, mcNrCredite, mcAiNota, mesajEroare_am, succesNota_mc, eroareNota_mc, mesaj_rm;
@@ -35,7 +36,7 @@ public class Utilizator implements Initializable {
     private void resetChoiceBoxRM() {
         choiceBox_rm.getItems().clear();
         ArrayList<Materii> materii = Conexiune.getConexiune().getMateriiUser();
-        for (Materii materie: materii) {
+        for (Materii materie : materii) {
             choiceBox_rm.getItems().add(materie);
         }
     }
@@ -167,7 +168,7 @@ public class Utilizator implements Initializable {
         Timp t = new Timp();
         ArrayList<Materii> materii = Conexiune.getConexiune().getMateriiUser();
         boolean oraOcupata = false;
-        for (Materii materie: materii) {
+        for (Materii materie : materii) {
             if (materie.getZi() == t.getnDay()) {
                 if (materie.getOraInceput() <= t.getHour() && materie.getDurata() + materie.getOraInceput() - 0.01 >= t.getHour()) {
                     oraOcupata = true;
@@ -326,7 +327,7 @@ public class Utilizator implements Initializable {
         cerc_rm.fillProperty().setValue(Paint.valueOf("#FF508C"));
     }
 
-    public void butonRenuntare(){
+    public void butonRenuntare() {
         if (choiceBox_rm.getValue() != null) {
             String numeMaterie = choiceBox_rm.getValue().toString();
             Conexiune.getConexiune().renuntareLaMaterie(choiceBox_rm.getValue());
@@ -340,5 +341,80 @@ public class Utilizator implements Initializable {
         resetChoiceBoxRM();
         adaugareMateriiCurente();
         mesaj_rm.setText("Ai renuntat la toate materiile pe care le aveai in orar!");
+    }
+
+    public void butonPomodoro() {
+        resetareCercuri();
+        cerc_p.fillProperty().setValue(Paint.valueOf("#FF508C"));
+        panePomodoro.toFront();
+    }
+    /*
+        #ED553B -- Pomodoro
+        #55ED3B -- 5Pause
+        #3BED55 -- 10Pause
+        #3B55ED -- 15Pause
+     */
+
+    public Text textPomodoroTime;
+
+    Thread t;
+
+    public void counterPmodoro() {
+        textPomodoroTime.fillProperty().setValue(Paint.valueOf("#ED553B"));
+        ceasThread(25);
+    }
+
+    public void counterPomodoro5P() {
+        textPomodoroTime.fillProperty().setValue(Paint.valueOf("#55ED3B"));
+        ceasThread(1);
+    }
+
+    public void counterPomodoro10P() {
+        textPomodoroTime.fillProperty().setValue(Paint.valueOf("#3BED55"));
+        ceasThread(10);
+    }
+
+    public void counterPomodoro15P() {
+        textPomodoroTime.fillProperty().setValue(Paint.valueOf("#3B55ED"));
+        ceasThread(15);
+    }
+
+    private void count(int nMin) throws InterruptedException {
+        String displayText;
+        int nrMin, nrSec, timeStamp;
+        Timp timp = new Timp();
+        Counter counter = new Counter(timp, nMin);
+
+        timeStamp = counter.getTimeStampDifference() - 55;
+
+        while (timeStamp > 0) {
+            nrMin = Counter.getMinutes(timeStamp);
+            nrSec = Counter.getSeconds(timeStamp);
+            displayText = String.valueOf(nrMin / 10) + String.valueOf(nrMin % 10) + ":" + String.valueOf(nrSec / 10) + String.valueOf(nrSec % 10);
+            textPomodoroTime.setText(displayText);
+
+            Thread.sleep(1000);
+
+            counter.setTimeStamp(timeStamp--);
+        }
+    }
+
+    private void ceasThread(int nMin) {
+        try {
+            t.interrupt();
+        } catch (Exception e) {
+            System.out.println("Nici nu fusese activat!");
+        }
+        t = new Thread() {
+            public void run() {
+                try {
+                    count(nMin);
+                } catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                    //e.printStackTrace();
+                }
+            }
+        };
+        t.start();
     }
 }

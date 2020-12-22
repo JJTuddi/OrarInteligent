@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text fx:id="cerc_p" layoutX="155.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
+                  <Text fx:id="cerc_p" layoutX="155.0" layoutY="20.0" onMouseClicked="#butonPomodoro" strokeType="OUTSIDE" strokeWidth="0.0" text="⬤">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -92,7 +92,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="870.0" layoutY="661.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="175.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Pomodoro" textFill="WHITE">
+            <Button layoutX="870.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#butonPomodoro" prefHeight="38.0" prefWidth="175.0" style="-fx-background-radius: 30; -fx-background-color: #7ab3a7;" text="Pomodoro" textFill="WHITE">
                <font>
                   <Font name="Microsoft JhengHei" size="18.0" />
                </font>
@@ -344,15 +344,6 @@
                   </Button>
                </children>
             </Pane>
-            <Pane layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
-               <children>
-                  <Text fill="#3f9785" layoutX="457.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materii Curente" underline="true">
-                     <font>
-                        <Font name="Microsoft JhengHei Bold" size="45.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
             <Pane fx:id="paneAdaugareMaterie" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
                <children>
                   <ChoiceBox fx:id="choiceBox_am" layoutX="190.0" layoutY="137.0" prefHeight="25.0" prefWidth="484.0" style="-fx-background-color: #c0c1b3; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #3f9785;" />
@@ -384,6 +375,52 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="panePomodoro" layoutX="15.0" layoutY="15.0" prefHeight="600.0" prefWidth="1250.0" style="-fx-background-color: #e5e8e1; -fx-background-radius: 30;">
+               <children>
+                  <Text fill="#3f9785" layoutX="508.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro" underline="true">
+                     <font>
+                        <Font name="Microsoft JhengHei Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textPomodoroTime" layoutX="12.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro Time" textAlignment="CENTER" wrappingWidth="1224.3125">
+                     <font>
+                        <Font name="Atomic Age" size="96.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="355.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#counterPmodoro" style="-fx-background-color: #ED553B; -fx-background-radius: 20;" text="Pomodoro" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="508.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#counterPomodoro5P" style="-fx-background-color: #55ED3B; -fx-background-radius: 20;" text="5Pause" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="755.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#counterPomodoro15P" style="-fx-background-color: #3B55ED; -fx-background-radius: 20;" text="15Pause" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="625.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#counterPomodoro10P" style="-fx-background-color: #3BED55; -fx-background-radius: 20;" text="10Pause" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Pane>
          </children>
